@@ -1,5 +1,4 @@
 # SmartRec — Smart Product Recommendation System
-## CS6905 Cloud Information Management Systems — Group 01
 
 ---
 
@@ -191,12 +190,3 @@ For-You endpoint decision tree:
 - **KMS + IAM** — per the AWS design (simulated locally)
 - **PIPEDA erasure** — `DELETE /api/interactions/user/:id/all`
 - **TTL fields** — interactions expire after 90 days, rec scores after 7 days
-
----
-
-## Group Members
-- Muhammad Wasiq Malik — 3777499
-- Ashhad Ahmed Memon — 3785935
-- Shantanu Latke — 3671879
-
-Course: CS6905 · Instructor: Dr. Shadi Aljendi
