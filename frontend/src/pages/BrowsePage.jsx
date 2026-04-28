@@ -53,12 +53,27 @@ export default function BrowsePage({ sidebarOpen = true, setSidebarOpen }) {
   }
 
   return (
-    <div style={{ display: 'flex', height: '100%', overflow: 'hidden' }}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: sidebarOpen ? '190px 1fr' : '0px 1fr',
+        transition: 'grid-template-columns 0.3s ease',
+        height: '100%'
+        }}>
       {/* Sidebar */}
-      <aside style={{
-        width: 190, background: 'var(--bg-surface)', borderRight: '1px solid var(--border)',
-        padding: 12, overflowY: 'auto', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 6
-      }}>
+        <aside style={{
+          width: sidebarOpen ? 190 : 0,
+          transform: sidebarOpen ? 'translateX(0)' : 'translateX(-100%)',
+          minWidth: sidebarOpen ? 190 : 0,
+          background: 'var(--bg-surface)',
+          borderRight: sidebarOpen ? '1px solid var(--border)' : 'none',
+          padding: sidebarOpen ? 12 : 0,
+          overflow: 'hidden',
+          flexShrink: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 6,
+          transition: 'all 0.3s ease'
+        }}>
         {/* Search */}
         <input
           value={search} onChange={handleSearch} placeholder="Search products…"
